@@ -1,0 +1,29 @@
+<%- include("../partials/header")%>
+
+<div class="container text-center">
+<div>
+	<h3 style="text-center;">
+		Edit <%=campground.name%>
+	</h3>
+	
+</div>
+	<form style="margin-top:100px;"action="/campgrounds/<%=campground._id%>?_method=PUT" method="POST">
+  <div class="form-group">
+    <input style="width:400px;margin:0 auto;"type="text" name="campground[name]"class="form-control text-center" id="exampleInputCampground" aria-describedby="emailHelp" value="<%=campground.name%>">
+  </div>
+	<div class="form-group">
+    <input style="width:400px;margin:0 auto;"type="number" name="campground[price]"class="form-control text-center" id="exampleInputCampground" aria-describedby="emailHelp" value="<%=campground.price%>" min="0.01" step="0.01">
+  </div>
+  <div class="form-group">
+        <input style="width:400px;margin:0 auto;"type="text" name="campground[image]"class="form-control text-center" id="exampleInputImage" value="<%=campground.image%>">
+  </div>
+		<div class="form-group">
+        <input style="width:400px;margin:0 auto;"type="text" name="campground[description]"class="form-control text-center" id="exampleInputImage" value="<%=campground.description%>">
+  </div>
+		
+  <a class="btn btn-primary"href="/campgrounds">GoBack</a> <input type="submit" class="btn btn-primary" value="Submit">
+</form>
+	
+</div>
+
+<%- include("../partials/footer")%>
